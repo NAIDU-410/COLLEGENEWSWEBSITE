@@ -1,0 +1,57 @@
+﻿
+> clgnews-backend@1.0.0 dev
+> nodemon server.js
+
+[33m[nodemon] 3.1.14[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] watching path(s): *.*[39m
+[33m[nodemon] watching extensions: js,mjs,cjs,json[39m
+[32m[nodemon] starting `node server.js`[39m
+MongoDB Connected: ac-xw1zmbm-shard-00-02.oxeqdp7.mongodb.net
+node.exe : node:events:486
+At line:1 char:1
++ & "E:\/node.exe" "E:\/node_m
+odules/npm/bin/npm-cli.js" 
+run dev
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~
+    + CategoryInfo          : 
+    NotSpecified: (node:even  
+  ts:486:String) [], Remote   
+ Exception
+    + FullyQualifiedErrorId : 
+    NativeCommandError
+ 
+      throw er; // Unhandled 
+'error' event
+      ^
+
+Error: listen EADDRINUSE: 
+address already in use 
+0.0.0.0:5000
+    at 
+Server.setupListenHandle [as 
+_listen2] (node:net:1940:16)
+    at listenInCluster 
+(node:net:1997:12)
+    at node:net:2206:7
+    at process.processTicksAnd
+Rejections (node:internal/proc
+ess/task_queues:89:21)
+Emitted 'error' event on 
+Server instance at:
+    at emitErrorNT 
+(node:net:1976:8)
+    at process.processTicksAnd
+Rejections (node:internal/proc
+ess/task_queues:89:21) {
+  code: 'EADDRINUSE',
+  errno: -4091,
+  syscall: 'listen',
+  address: '0.0.0.0',
+  port: 5000
+}
+
+Node.js v24.11.1
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m

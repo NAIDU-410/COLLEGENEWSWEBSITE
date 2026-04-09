@@ -1,0 +1,124 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-primary-light: #3b82f6;
+  --color-primary: #1e3a8a;
+  --color-primary-dark: #1e293b;
+
+  --font-sans: "Inter", "sans-serif", "system-ui";
+  --font-heading: "Outfit", "sans-serif";
+
+  --animate-fade-in: fadeIn 0.5s ease-out forwards;
+  --animate-slide-up: slideUp 0.5s ease-out forwards;
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideUp {
+    0% {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+}
+
+@layer base {
+  body {
+    @apply text-slate-900 bg-slate-50 dark:bg-slate-900 dark:text-slate-100 font-sans transition-colors duration-300;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  img,
+  video,
+  canvas,
+  svg {
+    max-width: 100%;
+    height: auto;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-heading font-semibold tracking-tight;
+    word-break: break-word;
+  }
+}
+
+@utility btn-primary {
+  @apply px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary/90 transition-all duration-300 active:scale-95 shadow-lg;
+}
+
+@utility card {
+  @apply bg-white dark:bg-slate-800 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-500 border border-slate-100 dark:border-slate-700 overflow-hidden;
+}
+
+@utility glass {
+  @apply bg-white/70 dark:bg-slate-800/70 backdrop-blur-xl border border-white/20 dark:border-slate-700/50;
+}
+
+/* Custom styles for calendar */
+.react-calendar {
+  @apply w-full border-none rounded-2xl overflow-hidden shadow-md;
+}
+
+.react-calendar__navigation {
+  @apply flex h-12 mb-4 bg-primary text-white;
+}
+
+.react-calendar__navigation button {
+  @apply min-w-[44px] bg-transparent text-white font-medium hover:bg-white/10;
+}
+
+.react-calendar__month-view__weekdays {
+  @apply text-slate-500 font-semibold uppercase text-xs text-center py-2;
+}
+
+.react-calendar__tile {
+  @apply py-8 text-center text-sm font-medium hover:bg-primary/5 rounded-lg transition-colors border-none;
+}
+
+.react-calendar__tile--now {
+  @apply bg-primary/10 text-primary;
+}
+
+.react-calendar__tile--active {
+  @apply bg-primary !text-white hover:bg-primary;
+}
+
+/* Animations */
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.5s ease-out;
+}
